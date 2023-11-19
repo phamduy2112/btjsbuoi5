@@ -1,13 +1,18 @@
+// input:khi người dùng nhập vào thì lấy value của người dùng và lưu trữ
+// xử lí: nếu là khách hàng thì phí sẽ rẻ hơn phí doanh nghiệp nếu là doanh nghiệp sẽ có thêm kết nối thêm dưới 10 thì 0 tính thêm trên 10 mỗi cái thì + 1 = 5$
+//output: xuất cho người dùng biết
 document.getElementById('btn4').onclick=function(e){
   e.preventDefault();
+  var maKH=document.getElementById('maKH').value
   var soKenhCaoCap=Number(document.getElementById('kenhCaoCap').value);
   var khachHang=String(document.getElementById('khachang').value);
   if(khachHang=='doanhnghiep'){
     var kenhKetNoi=Number(document.getElementById('kenhKetNoi').value);
 
   }
+  tong= loaiKhachHang(khachHang,soKenhCaoCap,kenhKetNoi);
+  document.getElementById('kq4').innerHTML=`👉Mã khách hàng:${maKH}; Tiền cáp: $${tong}`;
 
-  console.log(loaiKhachHang(khachHang,soKenhCaoCap,kenhKetNoi));
 }
 function themDN(){
   var khachang=String(document.getElementById('khachang').value);
